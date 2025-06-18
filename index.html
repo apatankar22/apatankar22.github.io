@@ -1,165 +1,462 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Researcher, Stanford University School of Medicine">
+    <meta name="description" content="Amogh Patankar's Professional Experiences">
     <meta name="author" content="Amogh Patankar">
-    <meta name="theme-color" content="#222222">
+    <meta name="theme-color" content="#191414">
 
-    <!--link rel="apple-touch-icon" sizes="180x180" href="images/nicons/icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/nicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/nicons/favicon-16x16.png"-->
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/style.css">
+    <!-- Fonts and Icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+
     <title>Amogh Patankar</title>
-  </head>
-  <body>
-    <!-- <h1>Hello, world!</h1> -->
-    <div class="container pt-5 allstuffp">
-        <div class="row pt-5 allstuff">
-            <div class="col-md-4 pt-5">
-                <div class="fixed-posi">
-                <p class="name">Amogh Patankar</p>
-                <img src="images/portrait_final.JPG" class="profilepic pt-3 pb-2"><br><br>
-                <div class=""><a style="padding-right:15px;" class="menulink" target="_blank" href="assets/resume_amoghpatankar.pdf"><i class="fa fa-file" style='font-size:17px'></i></a>CV</div>
-                <div class=""><a style="padding-right:12px;" class="menulink" target="_blank" href="mailto:apatankar@ucsd.edu.com"><i class="fa fa-envelope" style='font-size:17px'></i></a>Email</div>
-                <div class=""><a style="padding-right:12px;" class="menulink" target="_blank" href="https://github.com/apatankar22"><i class="fab fa-github" style='font-size:17px'></i></a>Github</div>
-                <div class=""><a style="padding-right:15px;" class="menulink" target="_blank" href="https://www.linkedin.com/in/apatankar22"><i class="fab fa-linkedin" style='font-size:17px'></i></a>Linkedin</div>
+
+    <style>
+        /* Base Styling */
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .main-container {
+            background: #121212;
+            padding-bottom: 50px;
+        }
+        
+        /* Playlist Header Section */
+        .playlist-header {
+            background: linear-gradient(to bottom, #345034 0%, #121212 100%);
+            padding: 3rem 2rem 1.5rem 2rem;
+            display: flex;
+            align-items: flex-end;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .playlist-image img {
+            width: 232px;
+            height: 232px;
+            object-fit: cover;
+            box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+        }
+
+        .playlist-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding-left: 1rem;
+        }
+        
+        .playlist-subtitle {
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .playlist-title {
+            font-size: clamp(2rem, 10vw, 5.5rem);
+            font-weight: 650;
+            margin: 0.5rem 0;
+            letter-spacing: -0.04em;
+        }
+
+        .playlist-user {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 0.875rem;
+        }
+
+        .playlist-user-pic {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            margin-right: 8px;
+            object-fit: cover;
+        }
+        
+        /* Links Section */
+        .links-bar {
+            padding: 1.5rem 2rem;
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .links-bar a {
+            color: #b3b3b3;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: color 0.2s ease-in-out;
+        }
+        
+        .links-bar a:hover {
+            color: #ffffff;
+        }
+        
+        /* Song List (Experiences) */
+        .song-list {
+            padding: 0 2rem;
+        }
+
+        .song-item-header {
+            display: grid;
+            grid-template-columns: 30px 2fr 3fr 2fr 1fr;
+            gap: 16px;
+            padding: 8px 16px;
+            color: #b3b3b3;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+        }
+
+        .song-item {
+            display: grid;
+            grid-template-columns: 30px 2fr 3fr 2fr 1fr;
+            gap: 16px;
+            padding: 8px 16px;
+            border-radius: 4px;
+            align-items: center;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .song-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .song-icon-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .song-icon {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            cursor: pointer;
+            border-radius: 4px;
+            background-color: #e0e0e0;
+        }
+
+        .song-description .title {
+            font-weight: 700;
+        }
+
+        .song-description .artist {
+            color: #b3b3b3;
+            font-size: 0.875rem;
+        }
+
+        .song-album, .song-duration {
+            color: #b3b3b3;
+            font-size: 0.875rem;
+        }
+        
+        .section-title {
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: 700;
+            padding: 2rem 2rem 1rem 2rem;
+            margin: 0;
+        }
+
+        /* Details Section (Expandable) */
+        .details {
+            display: none;
+            padding: 1rem 1.5rem 1.5rem 1.5rem;
+            margin: 0 16px;
+            background-color: #181818;
+            border-radius: 0 0 8px 8px;
+            border-top: 1px solid #282828;
+        }
+        
+        .details ul {
+            padding-left: 20px;
+            margin: 0;
+            color: #b3b3b3;
+            line-height: 1.6;
+        }
+         .details a {
+            color: #1ed760;
+            text-decoration: none;
+        }
+
+        .details a:hover {
+            text-decoration: underline;
+        }
+
+        .arrow {
+            color: #b3b3b3;
+            font-size: 0.875rem;
+            transition: transform 0.2s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .arrow.open {
+            transform: rotate(90deg);
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Playlist Header: Contains user image, name, and title -->
+        <div class="playlist-header">
+            <div class="playlist-image">
+                <img src="images/portrait_final.JPG"
+                     onerror="this.onerror=null;this.src='https://placehold.co/232x232/1ED760/FFFFFF?text=AP';"
+                     alt="Amogh Patankar">
+            </div>
+            <div class="playlist-info">
+                <!--<p class="playlist-subtitle">Playlist</p>-->
+                <h1 class="playlist-title">Amogh Patankar</h1>
+                <div style="color: #b3b3b3; font-size: 1.5rem; margin: 0.5rem 0;">Research Engineer</div>
+                <div class="playlist-user"><span style="font-size: 1.25rem;">San Francisco, CA</span>
                 </div>
             </div>
-            <div class="col-md-8 pt-5 about">
-                 Hi, I'm Amogh! I am a recent graduate from <a class="in-text" href="https://ucsd.edu/" target="_blank">University of California, San Diego</a>, with a M.S. in Computer Science, with an AI/ML specialization. 
-                 I'm also currently a growth strategist for <a class="in-text" href = "https://www.perplexity.ai" target="-black"> Perplexity AI</a>, and Co-President of the UCSD CSE Graduate Student Council. <br> <br>
-                  
-                 I've most recently worked at <a class="in-text" href = "https://www.amd.com" target="_black"> AMD</a>, as an Generative AI Applications Development Intern on the RyzenAI team, optimizing and becnhmarking LLM inference on hardware. I've previously worked as a generative AI intern at Marvell, building a gen-AI based synthetic data generation pipeline, and using reinforcement learning and deep learning for DSP parameter optimization. <br> <br>
-                 
-                 I've also worked at Amazon Web Services as a software development engineering intern on their AI-powered automatic speech recognition team, <a class="in-text" href="https://aws.amazon.com/lex/" target="_blank">Lex ASR</a>. <br> <br>
+        </div>
 
-                 I graduated with a B.S. in Data Science from the <a class="in-text" href="https://www.ucsd.edu" target="_blank"> University of California, San Diego</a> in 2023. For more
-                 details, check my <a class="in-text" href="assets/resume_amoghpatankar.pdf" target="_blank">CV</a> or shoot me an
-                 <a class="in-text" href="mailto:apatankar@ucsd.edu">email</a>! <br> <br> 
-
-                 <!--I've spent time volunteering with the <a class="in-text" href="https://lgmanor.org" target="_blank">Lincoln Glen Manor</a>, where I assisted senior citizens for various activities. <br><br>-->
-                 I enjoy playing and watching football, basketball and cricket, as well as making latte art, hiking, and (very competitively) playing board games!
-
-                 <p class="header pt-5">Experiences</p>
-                 <div class="py-2">
-                    <img class="img-fluid instilogo p-3" src="images/amd.jpg">
-                 <p class="paper my-2 pl-2">
-                     <span class="papertitle">AI Applications Development Intern<br>
-                     September 2024 - December 2024
-                     <ul>
-                        <li> Optimized generative AI workload (Llama-2, Llama-3, Stable Diffusion, etc.) execution on RyzenAI neural processing unit (NPU) using strategies such as caching, batching, quantization, as well as model and data parallelism. </li>
-                        <li> Benchmarked generative AI workloads on Ryzen and competitor hardware (Snapdragon X Elite, Lunar Lake), specifically time to first token, and tokens/sec, i.e. latency and throughput, as metrics. </li>
-                        <li> Evaluated NPU latency and utilization during concurrent execution of generative AI workloads and high-fidelity AI effects (Microsoft Studio Effects). </li>
-                     </ul>
-                    </span>
-                 </p>
-                 </div>
-                 <div class="py-2">
-                    <img class="img-fluid instilogo p-3" src="images/marvell.png">
-                 <p class="paper my-2 pl-2">
-                     <span class="papertitle">Data Scientist Intern, Marvell Inc.<br>
-                     Jun 2024 - September 2024
-                     <ul>
-                        <li> Architected an end-to-end ETL pipeline consisting of data engineering, analysis and visualization using numpy, pandas, sklearn, Tableau, etc. Data was ingested using Apache and AWS Kinesis, and stored in SnowflakeDB, and AWS S3.</li>
-                        <li> Utilized generative pretrained transformer (GPT) models to generate synthetic data, leveraging parameter efficient fine-tuning (PEFT) techniques such as low-rank adaptation (LoRA). </li>
-                        <li> Implemented reinforcement learning (RL) and deep learning methods for DSP parameter optimization. </li>
-                        <li> Integrated large language models (LLM) and retrieval augmented generation (RAG) to automate hardware modeling process. </li>                        
-                     </ul>
-                    </span>
-                 </p>
-                 </div>
-                 <div class="py-2">
-                    <img class="img-fluid instilogo p-3" src="images/stanford.png">
-                 <p class="paper my-2 pl-2">
-                     <span class="papertitle">Researcher, Stanford University School of Medicine<br>
-                     June 2023 - June 2024
-                     <ul>
-                        <li> Performed data engineering, analysis, and visualization through various methods in Python and R; specifically, pandas, geopandas, numpy, matplotlib, scikit-learn and ggplot. Developed unique statistical packages composed of chi-squared and Fisher tests. </li>
-                        <li> Led research teams mentored by <a class="in-text" href="https://profiles.stanford.edu/eric-gross" target="_blank">Dr. Eric Gross</a>, <a class="in-text" href="https://profiles.stanford.edu/latha-palaniappan" target="_blank">Dr. Latha Palaniappan</a>, and <a class="in-text" href="https://aimi.stanford.edu/people/jin-long" target="_blank">Jin Long</a>. <a class="in-text" href = "https://www.bjanaesthesia.org/article/S0007-0912(24)00460-4/abstract" target="_black"> Opioid overdose </a> research published in British Journal of Anaesthesia, and diabetes research in preprint at Journal of Asian Health. </li>
-                     </ul>
-                    </span>
-                 </p>
-                 </div>
-                 <div class="py-2">
-                    <img class="img-fluid instilogo p-3" src="images/aws.png">
-                    <p class="paper my-2 pl-2">
-                        <span class="papertitle"> Software Development Engineering Intern, Amazon Web Services<br>
-                        June 2022 - Sept 2022
-                        <ul>
-                            <li> Led architectural changes in Lex ASR (Automatic Speech Recognition) Services and DataHub, improving latency for conversational AI models. Conducted A/B tests to evaluate architectural changes for customer use. </li>
-                            <li> Performed cohort analysis to segment critical and non-critical customer data in DataHub, enhacing Lex ASR schemas, and enabled compliant storage of all data using AWS Kinesis, S3, and Lambda. </li>
-                            <li> Applied time series analysis on AWS CloudWatch metrics to track and optimize the performance of ASR Service, leading to lower response time and accelerating customer request resolution by up to ∼75%. </li>
-                        </ul>
-                    </span>
-                 </p>
-                 </div>
-                 <div class="py-2">
-                    <img class="img-fluid instilogo p-3" src="images/scripps.png">
-                    <p class="paper my-2 pl-2">
-                        <span class="papertitle"> Research Intern, Scripps Research Translational Institute <br>
-                        Jun 2021 - Aug 2021
-                        <ul>
-                           <li> Developed an R library to estimate genetic regulatory variation using a confidence interval estimation method. </li>
-                           <li> Implemented various statistical concepts like binomial distributions and parametric bootstrapping, and applied them to data
-                            from the Genotype Tissue Expression Project (GTEx).</li>
-                        </ul>
-                    </span>
-                 </p>   
+        <!-- Links Bar -->
+        <div class="links-bar">
+             <a target="_blank" href="assets/resume_amoghpatankar.pdf" title="CV"><i class="fa fa-file"></i></a>
+             <a target="_blank" href="mailto:amoghpatankar@gmail.com" title="Email"><i class="fa fa-envelope"></i></a>
+             <a target="_blank" href="https://github.com/apatankar22" title="Github"><i class="fab fa-github"></i></a>
+             <a target="_blank" href="https://www.linkedin.com/in/apatankar22" title="Linkedin"><i class="fab fa-linkedin"></i></a>
+        </div>
+        
+        <!-- Experiences Section -->
+        <h2 class="section-title">Experiences</h2>
+        <div class="song-list">
+            <div class="song-item-header">
+                <div></div>
+                <div>Company</div>
+                <div>Title</div>
+                <div>Location</div>
+                <div>Date</div>
+            </div>
+            
+            <!-- Hedra Experience -->
+            <div class="song-item" onclick="toggleDetails('hedra')" style="cursor: pointer;">
+                <div class="arrow">▶</div>
+                <div class="song-description" style="display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 40px; height: 40px; background-color: #ffffff; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
+                        <img src="images/hedra.png" class="song-icon" alt="Hedra Logo" style="width: 36px; height: 36px; object-fit: contain;">
+                    </div>
+                    <div class="title">Hedra</div>
                 </div>
-                 <div class="py-2">
-                    <img class="img-fluid instilogo p-3" src="images/inphi.png">
-                    <p class="paper my-2 pl-2">
-                        <span class="papertitle"> Firmware Embedded Engineering Intern, Inphi Corporation <b>(acq. Marvell Inc.)</b><br>
-                        July 2019 - Sept 2019
-                        <ul>
-                            <li> Developed Python modules and a user interface to create and display data based on test options and feature selection.</li>
-                            <li> Developed firmware in C++ to parse data, removing duplicates based on timestamp & hex value, per modular architecture.</li>
-                        </ul>
-                    </span>
-                 </p>
-                 </div>
-                 <p class="header pt-5">Education</p>
-                 <div class="py-2">
-                    <img class="img-fluid instilogo p-3" src="images/jsoe.png">
-                 <p class="paper my-2 pl-2">
-                     <span class="papertitle">Jacobs School of Engineering at <b>University of California, San Diego</b><br>
-                     M.S., Computer Science and Engineering, AI/ML Concentration<br>
-                     September 2023 - March 2025
-                    </span>
-                 </p>
-                 </div>
-                 <div class="py-2">
-                    <img class="img-fluid instilogo p-3" src="images/hdsi.png">
-                 <p class="paper my-2 pl-2">
-                    <span class="papertitle">Halicioglu Data Science Institute at <b>University of California, San Diego</b><br>
-                        B.S., Data Science<br>
-                        September 2020 - March 2023
-                    </span>
-                 </p>
-                 </div>
-            </div> 
+                <div class="song-album">Research Engineer</div>
+                <div class="song-duration">San Francisco, CA</div>
+                <div class="song-duration">May 2025 - Present</div>
+            </div>
+            <div class="details" id="hedra">
+                <ul>
+                    <li>Researching and implementing model inference acceleration techniques, focusing on efficient 3DVAE and diffusion modeling.</li>
+                    <li>Building ML infrastructure to optimize system performance for distributed training and cloud inference, with simultaneously monitoring.</li>
+                    <li>Responsible for scalable and efficient training, deployment, and optimization of diffusion transformer (DiT) models.</li>
+                    <li>Improving video data preprocessing for model training, specifically for vision transformer (ViT) and diffusion transformer architectures.</li>
+                </ul>
+            </div>
+
+            <!-- AMD Experience -->
+            <div class="song-item" onclick="toggleDetails('amd')" style="cursor: pointer;">
+                <div class="arrow">▶</div>
+                <div class="song-description" style="display: flex; align-items: center; gap: 12px;">
+                    <img src="images/amd.jpg" class="song-icon" alt="AMD Logo" style="width: 40px; height: 40px; object-fit: contain; border-radius: 4px; background-color: #ffffff;">
+                    <div class="title">AMD</div>
+                </div>
+                <div class="song-album">AI Applications Development Intern</div>
+                <div class="song-duration">Santa Clara, CA</div>
+                <div class="song-duration">Sep 2024 - Dec 2024</div>
+            </div>
+            <div class="details" id="amd">
+                <ul>
+                    <li>Optimized generative AI workload (Llama-2, Llama-3, Stable Diffusion, etc.) execution on RyzenAI neural processing unit (NPU) using strategies such as caching, batching, quantization, as well as model and data parallelism.</li>
+                    <li>Benchmarked generative AI workloads on Ryzen and competitor hardware, specifically time to first token, and tokens/sec, i.e. latency and throughput, as metrics.</li>
+                    <li>Evaluated NPU latency and utilization during concurrent execution of generative AI workloads and high-fidelity AI effects (Microsoft Studio Effects).</li>
+                </ul>
+            </div>
+            
+            <!-- Other experiences follow the same pattern... -->
+             <div class="song-item" onclick="toggleDetails('marvell')" style="cursor: pointer;">
+                <div class="arrow">▶</div>
+                <div class="song-description" style="display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 40px; height: 40px; background-color: #ffffff; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
+                        <img src="images/marvell.png" class="song-icon" alt="Marvell Logo" style="width: 36px; height: 36px; object-fit: contain;">
+                    </div>
+                    <div class="title">Marvell Inc.</div>
+                </div>
+                <div class="song-album">Data Scientist Intern</div>
+                <div class="song-duration">Santa Clara, CA</div>
+                <div class="song-duration">Jun 2024 - Sep 2024</div>
+            </div>
+            <div class="details" id="marvell">
+                <ul>
+                    <li>Architected an end-to-end ETL pipeline using numpy, pandas, sklearn, Tableau, etc. Data was ingested using Apache and AWS Kinesis, and stored in SnowflakeDB, and AWS S3.</li>
+                    <li>Utilized generative pretrained transformer (GPT) models to generate synthetic data, leveraging parameter efficient fine-tuning (PEFT) techniques such as low-rank adaptation (LoRA).</li>
+                    <li>Implemented reinforcement learning (RL) and deep learning methods for DSP parameter optimization.</li>
+                    <li>Integrated large language models (LLM) and retrieval augmented generation (RAG) to automate hardware modeling process.</li>                        
+                 </ul>
+            </div>
+
+            <div class="song-item" onclick="toggleDetails('stanford')" style="cursor: pointer;">
+                <div class="arrow">▶</div>
+                <div class="song-description" style="display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 40px; height: 40px; background-color: #ffffff; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
+                        <img src="images/stanford.png" class="song-icon" alt="Stanford Logo" style="width: 40px; height: 40px; object-fit: contain;">
+                    </div>
+                    <div class="title">Stanford University</div>
+                </div>
+                <div class="song-album">Researcher</div>
+                <div class="song-duration">Palo Alto, CA</div>
+                <div class="song-duration">Jun 2023 - Jun 2024</div>
+            </div>
+            <div class="details" id="stanford">
+                <ul>
+                    <li>Performed data engineering, analysis, and visualization through various methods in Python and R. Developed unique statistical packages composed of chi-squared and Fisher tests.</li>
+                    <li>Led research teams mentored by <a href="https://profiles.stanford.edu/eric-gross" target="_blank">Dr. Eric Gross</a>, <a href="https://profiles.stanford.edu/latha-palaniappan" target="_blank">Dr. Latha Palaniappan</a>, and <a href="https://aimi.stanford.edu/people/jin-long" target="_blank">Jin Long</a>. Opioid overdose research <a href="https://www.bjanaesthesia.org/article/S0007-0912(24)00460-4/abstract" target="_blank">published in British Journal of Anaesthesia</a>.</li>
+                 </ul>
+            </div>
+
+             <div class="song-item" onclick="toggleDetails('aws')" style="cursor: pointer;">
+                <div class="arrow">▶</div>
+                <div class="song-description" style="display: flex; align-items: center; gap: 12px;">
+                    <img src="images/aws.png" class="song-icon" alt="AWS Logo" style="width: 40px; height: 40px; object-fit: contain; border-radius: 4px; background-color: #ffffff;">
+                    <div class="title">Amazon Web Services</div>
+                </div>
+                <div class="song-album">Software Development Engineering Intern</div>
+                <div class="song-duration">Seattle, WA</div>
+                <div class="song-duration">Jun 2022 - Sep 2022</div>
+            </div>
+            <div class="details" id="aws">
+                <ul>
+                    <li>Led architectural changes in Lex ASR (Automatic Speech Recognition) Services and DataHub, improving latency for conversational AI models.</li>
+                    <li>Performed cohort analysis to segment customer data in DataHub, enhancing Lex ASR schemas, and enabled compliant storage of all data using AWS Kinesis, S3, and Lambda.</li>
+                    <li>Applied time series analysis on AWS CloudWatch metrics to track and optimize the performance of ASR Service, accelerating customer request resolution by up to ~75%.</li>
+                </ul>
+            </div>
+
+            <div class="song-item" onclick="toggleDetails('scripps')" style="cursor: pointer;">
+                <div class="arrow">▶</div>
+                <div class="song-description" style="display: flex; align-items: center; gap: 12px;">
+                    <img src="images/scripps.png" class="song-icon" alt="Scripps Logo" style="width: 40px; height: 40px; object-fit: contain; border-radius: 4px; background-color: #ffffff;">
+                    <div class="title">Scripps Research</div>
+                </div>
+                <div class="song-album">Research Intern</div>
+                <div class="song-duration">La Jolla, CA</div>
+                <div class="song-duration">Jun 2021 - Aug 2021</div>
+            </div>
+            <div class="details" id="scripps">
+                <ul>
+                    <li>Developed an R library to estimate genetic regulatory variation using a confidence interval estimation method.</li>
+                    <li>Implemented various statistical concepts like binomial distributions and parametric bootstrapping, and applied them to data from the Genotype Tissue Expression Project (GTEx).</li>
+                </ul>
+            </div>
+
+            <div class="song-item" onclick="toggleDetails('inphi')" style="cursor: pointer;">
+                <div class="arrow">▶</div>
+                <div class="song-description" style="display: flex; align-items: center; gap: 12px;">
+                    <img src="images/inphi.png" class="song-icon" alt="Inphi Logo" style="width: 40px; height: 40px; object-fit: contain; border-radius: 4px; background-color: #ffffff;">
+                    <div class="title">Inphi Corporation</div>
+                </div>
+                <div class="song-album">Firmware Embedded Engineering Intern</div>
+                <div class="song-duration">Santa Clara, CA</div>
+                <div class="song-duration">Jul 2019 - Sep 2019</div>
+            </div>
+            <div class="details" id="inphi">
+                <ul>
+                    <li>Developed Python modules and a user interface to create and display data based on test options and feature selection.</li>
+                    <li>Developed firmware in C++ to parse data, removing duplicates based on timestamp & hex value, per modular architecture.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Education Section -->
+        <h2 class="section-title">Education</h2>
+        <div class="song-list">
+            <div class="song-item-header">
+                <div></div>
+                <div>University</div>
+                <div>Degree</div>
+                <div>Department</div>
+                <div>Date</div>
+            </div>
+
+            <!-- UCSD Masters -->
+             <div class="song-item" onclick="toggleDetails('jsoe')" style="cursor: pointer;">
+                <div class="arrow">▶</div>
+                <div class="song-description" style="display: flex; align-items: center; gap: 12px;">
+                    <img src="images/jsoe.png" class="song-icon" alt="JSOE Logo" style="width: 40px; height: 40px; object-fit: contain; border-radius: 4px; background-color: #ffffff;">
+                    <div class="title">UC San Diego</div>
+                </div>
+                <div class="song-album">M.S., Computer Science (AI/ML)</div>
+                <div class="song-duration">Jacobs School of Engineering</div>
+                <div class="song-duration">Sep 2023 - Mar 2025</div>
+            </div>
+            <div class="details" id="jsoe">
+                <ul>
+                    <li>Growth Strategist for <a href="https://www.perplexity.ai" target="_blank">Perplexity AI</a></li>
+                    <li>Co-President of the UCSD CSE Graduate Student Council</li>
+                </ul>
+            </div>
+
+            <!-- UCSD Bachelors -->
+             <div class="song-item">
+                <div></div>
+                <div class="song-description" style="display: flex; align-items: center; gap: 12px;">
+                    <img src="images/hdsi.png" class="song-icon" alt="HDSI Logo" style="width: 40px; height: 40px; object-fit: contain; border-radius: 4px; background-color: #ffffff;">
+                    <div class="title">UC San Diego</div>
+                </div>
+                <div class="song-album">B.S., Data Science</div>
+                <div class="song-duration">Halicioglu Data Science Institute</div>
+                <div class="song-duration">Sep 2020 - Mar 2023</div>
+            </div>
+
         </div>
     </div>
-    <br><br><br><br><br><br><br>
-</div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="assets/style.js"></script>
+    <!-- JavaScript for Toggle Functionality -->
+    <script>
+        /**
+         * Toggles the visibility of the details section for a song item.
+         * @param {string} id - The unique identifier for the details element.
+         */
+        function toggleDetails(id) {
+            var details = document.getElementById(id);
+            if (!details) return; // Exit if the element doesn't exist
+
+            // Find the arrow in the same row
+            var arrow = details.previousElementSibling.querySelector('.arrow');
+            
+            if (details.style.display === "block") {
+                details.style.display = "none";
+                if (arrow) arrow.classList.remove('open');
+            } else {
+                // Show the clicked one without closing others
+                details.style.display = "block";
+                if (arrow) arrow.classList.add('open');
+            }
+        }
+    </script>
 </body>
-  <style>
-  </style>
+
 </html>
