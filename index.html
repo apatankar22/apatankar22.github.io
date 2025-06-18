@@ -10,6 +10,10 @@
     <meta name="author" content="Amogh Patankar">
     <meta name="theme-color" content="#191414">
 
+    <!-- Favicon with alien emoji -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👽</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👽</text></svg>">
+
     <!-- Fonts and Icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -115,7 +119,7 @@
 
         .song-item-header {
             display: grid;
-            grid-template-columns: 30px 2fr 3fr 2fr 1fr;
+            grid-template-columns: 30px 1.5fr 2.5fr 1.5fr 2fr;
             gap: 16px;
             padding: 8px 16px;
             color: #b3b3b3;
@@ -127,7 +131,7 @@
 
         .song-item {
             display: grid;
-            grid-template-columns: 30px 2fr 3fr 2fr 1fr;
+            grid-template-columns: 30px 1.5fr 2.5fr 1.5fr 2fr;
             gap: 16px;
             padding: 8px 16px;
             border-radius: 4px;
@@ -213,6 +217,77 @@
 
         .arrow.open {
             transform: rotate(90deg);
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 58.75vw) {
+            .song-item-header {
+                grid-template-columns: 30px 1fr 1.5fr 1fr 1.5fr;
+                gap: 8px;
+                padding: 8px 12px;
+                font-size: 0.7rem;
+            }
+
+            .song-item {
+                grid-template-columns: 30px 1fr 1.5fr 1fr 1.5fr;
+                gap: 8px;
+                padding: 8px 12px;
+            }
+
+            .song-description .title {
+                font-size: 0.875rem;
+            }
+
+            .song-description .artist {
+                font-size: 0.75rem;
+            }
+
+            .song-album, .song-duration {
+                font-size: 0.75rem;
+            }
+
+            .playlist-header {
+                padding: 2rem 1rem 1rem 1rem;
+                gap: 1rem;
+            }
+
+            .playlist-title {
+                font-size: clamp(1.5rem, 8vw, 3rem);
+            }
+
+            .links-bar {
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            .song-list {
+                padding: 0 1rem;
+            }
+
+            .section-title {
+                padding: 1.5rem 1rem 0.5rem 1rem;
+                font-size: 1.25rem;
+            }
+        }
+
+        /* For very small screens */
+        @media (max-width: 40vw) {
+            .song-item-header {
+                grid-template-columns: 25px 0.8fr 1.2fr 0.8fr 1.2fr;
+                gap: 6px;
+                padding: 6px 8px;
+                font-size: 0.65rem;
+            }
+
+            .song-item {
+                grid-template-columns: 25px 0.8fr 1.2fr 0.8fr 1.2fr;
+                gap: 6px;
+                padding: 6px 8px;
+            }
+
+            .arrow {
+                font-size: 0.75rem;
+            }
         }
 
     </style>
