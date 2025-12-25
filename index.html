@@ -1,537 +1,380 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amogh Patankar</title>
+  <link rel="icon" type="image/png" href="mountain.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Amogh Patankar's Professional Experiences">
-    <meta name="author" content="Amogh Patankar">
-    <meta name="theme-color" content="#191414">
+    body {
+      background-color: #fafaf9;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
 
-    <!-- Favicon with alien emoji -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👽</text></svg>">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👽</text></svg>">
+    ::selection {
+      background-color: #1B0000;
+      color: white;
+    }
 
-    <!-- Fonts and Icons -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    ::-moz-selection {
+      background-color: #1B0000;
+      color: white;
+    }
 
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 40px;
+      position: sticky;
+      top: 0;
+      background-color: rgba(250, 250, 249, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
 
-    <title>Amogh Patankar</title>
+    .datetime {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: #666;
+      font-weight: 600;
+      text-align: right;
+    }
 
-    <style>
-        /* Base Styling */
-        body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
 
-        .main-container {
-            background: #121212;
-            padding-bottom: 50px;
-        }
-        
-        /* Playlist Header Section */
-        .playlist-header {
-            background: linear-gradient(to bottom, #345034 0%, #121212 100%);
-            padding: 3rem 2rem 1.5rem 2rem;
-            display: flex;
-            align-items: flex-end;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
+    .logo-img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      object-position: center;
+    }
 
-        .playlist-image img {
-            width: 232px;
-            height: 232px;
-            object-fit: cover;
-            box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
-            border-radius: 8px;
-        }
+    .brand {
+      display: flex;
+      flex-direction: column;
+    }
 
-        .playlist-info {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding-left: 1rem;
-        }
-        
-        .playlist-subtitle {
-            font-size: 0.875rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin: 0;
-        }
+    .brand h1 {
+      margin: 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
 
-        .playlist-title {
-            font-size: clamp(2rem, 10vw, 5.5rem);
-            font-weight: 650;
-            margin: 0.5rem 0;
-            letter-spacing: -0.04em;
-        }
+    .brand-subtitle {
+      font-size: 0.75rem;
+      color: #666;
+      margin: 0;
+      letter-spacing: 0.5px;
+      font-weight: 400;
+    }
 
-        .playlist-user {
-            display: flex;
-            align-items: center;
-            font-weight: 700;
-            font-size: 0.875rem;
-        }
+    /* Hero Section */
+    .hero {
+      padding: 70px 40px 40px;
+      text-align: center;
+    }
 
-        .playlist-user-pic {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            margin-right: 8px;
-            object-fit: cover;
-        }
-        
-        /* Links Section */
-        .links-bar {
-            padding: 1.5rem 2rem;
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-        }
+    .hero h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      margin: 0 0 20px;
+      color: #1a1a1a;
+      line-height: 1.2;
+    }
 
-        .links-bar a {
-            color: #b3b3b3;
-            text-decoration: none;
-            font-size: 1.5rem;
-            transition: color 0.2s ease-in-out;
-        }
-        
-        .links-bar a:hover {
-            color: #ffffff;
-        }
-        
-        /* Song List (Experiences) */
-        .song-list {
-            padding: 0 2rem;
-        }
+    .hero p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto;
+      font-weight: 300;
+    }
 
-        .song-item-header {
-            display: grid;
-            grid-template-columns: 30px 1.5fr 2.5fr 1.5fr 2fr;
-            gap: 16px;
-            padding: 8px 16px;
-            color: #b3b3b3;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 0.05em;
-        }
+    .hero p a {
+      color: #1a1a1a;
+      text-decoration: underline;
+      text-decoration-color: rgba(26, 26, 26, 0.3);
+      transition: text-decoration-color 0.3s;
+    }
 
-        .song-item {
-            display: grid;
-            grid-template-columns: 30px 1.5fr 2.5fr 1.5fr 2fr;
-            gap: 16px;
-            padding: 8px 16px;
-            border-radius: 4px;
-            align-items: center;
-            transition: background-color 0.2s ease-in-out;
-        }
+    .hero p a:hover {
+      text-decoration-color: #1a1a1a;
+    }
 
-        .song-item:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
+    /* Portfolio Section */
+    .portfolio {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 40px 80px;
+    }
 
-        .song-icon-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    .company-card {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      margin-bottom: 15px;
+      padding: 10px 0;
+    }
 
-        .song-icon {
-            width: 40px;
-            height: 40px;
-            object-fit: contain;
-            cursor: pointer;
-            border-radius: 4px;
-            background-color: #e0e0e0;
-        }
+    .company-link {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      text-decoration: none;
+      color: inherit;
+      flex: 1;
+      transition: opacity 0.3s;
+    }
 
-        .song-description .title {
-            font-weight: 700;
-        }
+    .company-link:hover {
+      opacity: 0.7;
+    }
 
-        .song-description .artist {
-            color: #b3b3b3;
-            font-size: 0.875rem;
-        }
+    .company-logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 8px;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
 
-        .song-album, .song-duration {
-            color: #b3b3b3;
-            font-size: 0.875rem;
-        }
-        
-        .section-title {
-            color: #ffffff;
-            font-size: 1.5rem;
-            font-weight: 700;
-            padding: 2rem 2rem 1rem 2rem;
-            margin: 0;
-        }
+    .stealth-logo {
+      background: #e7e7e6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #666;
+    }
 
-        /* Details Section (Expandable) */
-        .details {
-            display: none;
-            padding: 1rem 1.5rem 1.5rem 1.5rem;
-            margin: 0 16px;
-            background-color: #181818;
-            border-radius: 0 0 8px 8px;
-            border-top: 1px solid #282828;
-        }
-        
-        .details ul {
-            padding-left: 20px;
-            margin: 0;
-            color: #b3b3b3;
-            line-height: 1.6;
-        }
-         .details a {
-            color: #1ed760;
-            text-decoration: none;
-        }
+    .company-info {
+      flex: 1;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
 
-        .details a:hover {
-            text-decoration: underline;
-        }
+    .company-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0;
+      color: #1a1a1a;
+    }
 
-        .arrow {
-            color: #b3b3b3;
-            font-size: 0.875rem;
-            transition: transform 0.2s ease-in-out;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-        }
+    .company-description {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: #666;
+      margin: 0;
+      line-height: 1.5;
+    }
 
-        .arrow.open {
-            transform: rotate(90deg);
-        }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header {
+        padding: 20px;
+      }
 
-        /* Responsive design for smaller screens */
-        @media (max-width: 58.75vw) {
-            .song-item-header {
-                grid-template-columns: 30px 1fr 1.5fr 1fr 1.5fr;
-                gap: 8px;
-                padding: 8px 12px;
-                font-size: 0.7rem;
-            }
+      .logo-img {
+        width: 65px;
+        height: 65px;
+      }
 
-            .song-item {
-                grid-template-columns: 30px 1fr 1.5fr 1fr 1.5fr;
-                gap: 8px;
-                padding: 8px 12px;
-            }
+      .brand h1 {
+        font-size: 1.2rem;
+      }
 
-            .song-description .title {
-                font-size: 0.875rem;
-            }
+      .brand-subtitle {
+        font-size: 0.65rem;
+      }
 
-            .song-description .artist {
-                font-size: 0.75rem;
-            }
+      .header-right {
+        gap: 15px;
+      }
 
-            .song-album, .song-duration {
-                font-size: 0.75rem;
-            }
+      .datetime {
+        font-size: 0.9rem;
+      }
 
-            .playlist-header {
-                padding: 2rem 1rem 1rem 1rem;
-                gap: 1rem;
-            }
+      .dark-mode-toggle {
+        width: 40px;
+        height: 40px;
+      }
 
-            .playlist-title {
-                font-size: clamp(1.5rem, 8vw, 3rem);
-            }
+      .hero {
+        padding: 50px 20px 30px;
+      }
 
-            .links-bar {
-                padding: 1rem;
-                gap: 1rem;
-            }
+      .hero h2 {
+        font-size: 2.5rem;
+      }
 
-            .song-list {
-                padding: 0 1rem;
-            }
+      .hero p {
+        font-size: 1.1rem;
+      }
 
-            .section-title {
-                padding: 1.5rem 1rem 0.5rem 1rem;
-                font-size: 1.25rem;
-            }
-        }
+      .portfolio {
+        padding: 0 20px 60px;
+      }
 
-        /* For very small screens */
-        @media (max-width: 40vw) {
-            .song-item-header {
-                grid-template-columns: 25px 0.8fr 1.2fr 0.8fr 1.2fr;
-                gap: 6px;
-                padding: 6px 8px;
-                font-size: 0.65rem;
-            }
+      .company-logo {
+        width: 45px;
+        height: 45px;
+      }
 
-            .song-item {
-                grid-template-columns: 25px 0.8fr 1.2fr 0.8fr 1.2fr;
-                gap: 6px;
-                padding: 6px 8px;
-            }
+      .stealth-logo {
+        font-size: 1.3rem;
+      }
 
-            .arrow {
-                font-size: 0.75rem;
-            }
-        }
-
-    </style>
+      .company-info {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
-
 <body>
-    <div class="main-container">
-        <!-- Playlist Header: Contains user image, name, and title -->
-        <div class="playlist-header">
-            <div class="playlist-image">
-                <img src="images/portrait_final.JPG"
-                     onerror="this.onerror=null;this.src='https://placehold.co/232x232/1ED760/FFFFFF?text=AP';"
-                     alt="Amogh Patankar">
-            </div>
-            <div class="playlist-info">
-                <!--<p class="playlist-subtitle">Playlist</p>-->
-                <h1 class="playlist-title">Amogh Patankar</h1>
-                <div style="color: #b3b3b3; font-size: 1.5rem; margin: 0.5rem 0;">Research Engineer</div>
-                <div class="playlist-user"><span style="font-size: 1.25rem;">San Francisco, CA</span>
-                </div>
-            </div>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo-section">
+      <img src="images/avp_logo.jpg" alt="Amogh Patankar Logo" class="logo-img" />
+      <div class="brand">
+        <h1>Amogh Patankar</h1>
+        <p class="brand-subtitle">Amogh | अमोघ | Infallible </p>
+      </div>
+    </div>
+    <div class="datetime" id="datetime"></div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Research at Hedra. <br> Prev @ AMD, Marvell, AWS, Stanford University School of Medicine.</h2>
+    <p>Reach out at <a href="mailto:amogh.patankar@gmail.com">amogh.patankar@gmail.com</a>.</p>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="portfolio">
+    <div class="company-card">
+      <a href="https://hedra.com" target="_blank" rel="noopener noreferrer" class="company-link">
+        <img src="images/hedra-square.jpeg" alt="Hedra Logo" class="company-logo" />
+        <div class="company-info">
+          <h3 class="company-name">Hedra</h3>
+          <span class="company-description">— Building the best AI-native visual communication product, making it easier to create great content.</span>
         </div>
-
-        <!-- Links Bar -->
-        <div class="links-bar">
-             <a target="_blank" href="assets/resume_amoghpatankar.pdf" title="CV"><i class="fa fa-file"></i></a>
-             <a target="_blank" href="mailto:amoghpatankar@gmail.com" title="Email"><i class="fa fa-envelope"></i></a>
-             <a target="_blank" href="https://github.com/apatankar22" title="Github"><i class="fab fa-github"></i></a>
-             <a target="_blank" href="https://www.linkedin.com/in/apatankar22" title="Linkedin"><i class="fab fa-linkedin"></i></a>
-        </div>
-        
-        <!-- Experiences Section -->
-        <h2 class="section-title">Experiences</h2>
-        <div class="song-list">
-            <div class="song-item-header">
-                <div></div>
-                <div>Company</div>
-                <div>Title</div>
-                <div>Location</div>
-                <div>Date</div>
-            </div>
-            
-            <!-- Hedra Experience -->
-            <div class="song-item" onclick="toggleDetails('hedra')" style="cursor: pointer;">
-                <div class="arrow">▶</div>
-                <div class="song-description" style="display: flex; align-items: center; gap: 12px;">
-                    <div style="width: 40px; height: 40px; background-color: #ffffff; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
-                        <img src="images/hedra.png" class="song-icon" alt="Hedra Logo" style="width: 36px; height: 36px; object-fit: contain;">
-                    </div>
-                    <div class="title">Hedra</div>
-                </div>
-                <div class="song-album">Research Engineer</div>
-                <div class="song-duration">San Francisco, CA</div>
-                <div class="song-duration">May 2025 - Present</div>
-            </div>
-            <div class="details" id="hedra">
-                <ul>
-                    <li>Researching and implementing model inference acceleration techniques, focusing on efficient 3DVAE and diffusion modeling.</li>
-                    <li>Building ML infrastructure to optimize system performance for distributed training and cloud inference, with simultaneously monitoring.</li>
-                    <li>Responsible for scalable and efficient training, deployment, and optimization of diffusion transformer (DiT) models.</li>
-                    <li>Improving video data preprocessing for model training, specifically for vision transformer (ViT) and diffusion transformer architectures.</li>
-                </ul>
-            </div>
-
-            <!-- AMD Experience -->
-            <div class="song-item" onclick="toggleDetails('amd')" style="cursor: pointer;">
-                <div class="arrow">▶</div>
-                <div class="song-description" style="display: flex; align-items: center; gap: 12px;">
-                    <img src="images/amd.jpg" class="song-icon" alt="AMD Logo" style="width: 40px; height: 40px; object-fit: contain; border-radius: 4px; background-color: #ffffff;">
-                    <div class="title">AMD</div>
-                </div>
-                <div class="song-album">AI Applications Development Intern</div>
-                <div class="song-duration">Santa Clara, CA</div>
-                <div class="song-duration">Sep 2024 - Dec 2024</div>
-            </div>
-            <div class="details" id="amd">
-                <ul>
-                    <li>Optimized generative AI workload (Llama-2, Llama-3, Stable Diffusion, etc.) execution on RyzenAI neural processing unit (NPU) using strategies such as caching, batching, quantization, as well as model and data parallelism.</li>
-                    <li>Benchmarked generative AI workloads on Ryzen and competitor hardware, specifically time to first token, and tokens/sec, i.e. latency and throughput, as metrics.</li>
-                    <li>Evaluated NPU latency and utilization during concurrent execution of generative AI workloads and high-fidelity AI effects (Microsoft Studio Effects).</li>
-                </ul>
-            </div>
-            
-            <!-- Other experiences follow the same pattern... -->
-             <div class="song-item" onclick="toggleDetails('marvell')" style="cursor: pointer;">
-                <div class="arrow">▶</div>
-                <div class="song-description" style="display: flex; align-items: center; gap: 12px;">
-                    <div style="width: 40px; height: 40px; background-color: #ffffff; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
-                        <img src="images/marvell.png" class="song-icon" alt="Marvell Logo" style="width: 36px; height: 36px; object-fit: contain;">
-                    </div>
-                    <div class="title">Marvell Inc.</div>
-                </div>
-                <div class="song-album">Data Scientist Intern</div>
-                <div class="song-duration">Santa Clara, CA</div>
-                <div class="song-duration">Jun 2024 - Sep 2024</div>
-            </div>
-            <div class="details" id="marvell">
-                <ul>
-                    <li>Architected an end-to-end ETL pipeline using numpy, pandas, sklearn, Tableau, etc. Data was ingested using Apache and AWS Kinesis, and stored in SnowflakeDB, and AWS S3.</li>
-                    <li>Utilized generative pretrained transformer (GPT) models to generate synthetic data, leveraging parameter efficient fine-tuning (PEFT) techniques such as low-rank adaptation (LoRA).</li>
-                    <li>Implemented reinforcement learning (RL) and deep learning methods for DSP parameter optimization.</li>
-                    <li>Integrated large language models (LLM) and retrieval augmented generation (RAG) to automate hardware modeling process.</li>                        
-                 </ul>
-            </div>
-
-            <div class="song-item" onclick="toggleDetails('stanford')" style="cursor: pointer;">
-                <div class="arrow">▶</div>
-                <div class="song-description" style="display: flex; align-items: center; gap: 12px;">
-                    <div style="width: 40px; height: 40px; background-color: #ffffff; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
-                        <img src="images/stanford.png" class="song-icon" alt="Stanford Logo" style="width: 40px; height: 40px; object-fit: contain;">
-                    </div>
-                    <div class="title">Stanford University</div>
-                </div>
-                <div class="song-album">Researcher</div>
-                <div class="song-duration">Palo Alto, CA</div>
-                <div class="song-duration">Jun 2023 - Jun 2024</div>
-            </div>
-            <div class="details" id="stanford">
-                <ul>
-                    <li>Performed data engineering, analysis, and visualization through various methods in Python and R. Developed unique statistical packages composed of chi-squared and Fisher tests.</li>
-                    <li>Led research teams mentored by <a href="https://profiles.stanford.edu/eric-gross" target="_blank">Dr. Eric Gross</a>, <a href="https://profiles.stanford.edu/latha-palaniappan" target="_blank">Dr. Latha Palaniappan</a>, and <a href="https://aimi.stanford.edu/people/jin-long" target="_blank">Jin Long</a>. Opioid overdose research <a href="https://www.bjanaesthesia.org/article/S0007-0912(24)00460-4/abstract" target="_blank">published in British Journal of Anaesthesia</a>.</li>
-                 </ul>
-            </div>
-
-             <div class="song-item" onclick="toggleDetails('aws')" style="cursor: pointer;">
-                <div class="arrow">▶</div>
-                <div class="song-description" style="display: flex; align-items: center; gap: 12px;">
-                    <img src="images/aws.png" class="song-icon" alt="AWS Logo" style="width: 40px; height: 40px; object-fit: contain; border-radius: 4px; background-color: #ffffff;">
-                    <div class="title">Amazon Web Services</div>
-                </div>
-                <div class="song-album">Software Development Engineering Intern</div>
-                <div class="song-duration">Seattle, WA</div>
-                <div class="song-duration">Jun 2022 - Sep 2022</div>
-            </div>
-            <div class="details" id="aws">
-                <ul>
-                    <li>Led architectural changes in Lex ASR (Automatic Speech Recognition) Services and DataHub, improving latency for conversational AI models.</li>
-                    <li>Performed cohort analysis to segment customer data in DataHub, enhancing Lex ASR schemas, and enabled compliant storage of all data using AWS Kinesis, S3, and Lambda.</li>
-                    <li>Applied time series analysis on AWS CloudWatch metrics to track and optimize the performance of ASR Service, accelerating customer request resolution by up to ~75%.</li>
-                </ul>
-            </div>
-
-            <div class="song-item" onclick="toggleDetails('scripps')" style="cursor: pointer;">
-                <div class="arrow">▶</div>
-                <div class="song-description" style="display: flex; align-items: center; gap: 12px;">
-                    <img src="images/scripps.png" class="song-icon" alt="Scripps Logo" style="width: 40px; height: 40px; object-fit: contain; border-radius: 4px; background-color: #ffffff;">
-                    <div class="title">Scripps Research</div>
-                </div>
-                <div class="song-album">Research Intern</div>
-                <div class="song-duration">La Jolla, CA</div>
-                <div class="song-duration">Jun 2021 - Aug 2021</div>
-            </div>
-            <div class="details" id="scripps">
-                <ul>
-                    <li>Developed an R library to estimate genetic regulatory variation using a confidence interval estimation method.</li>
-                    <li>Implemented various statistical concepts like binomial distributions and parametric bootstrapping, and applied them to data from the Genotype Tissue Expression Project (GTEx).</li>
-                </ul>
-            </div>
-
-            <div class="song-item" onclick="toggleDetails('inphi')" style="cursor: pointer;">
-                <div class="arrow">▶</div>
-                <div class="song-description" style="display: flex; align-items: center; gap: 12px;">
-                    <img src="images/inphi.png" class="song-icon" alt="Inphi Logo" style="width: 40px; height: 40px; object-fit: contain; border-radius: 4px; background-color: #ffffff;">
-                    <div class="title">Inphi Corporation</div>
-                </div>
-                <div class="song-album">Firmware Embedded Engineering Intern</div>
-                <div class="song-duration">Santa Clara, CA</div>
-                <div class="song-duration">Jul 2019 - Sep 2019</div>
-            </div>
-            <div class="details" id="inphi">
-                <ul>
-                    <li>Developed Python modules and a user interface to create and display data based on test options and feature selection.</li>
-                    <li>Developed firmware in C++ to parse data, removing duplicates based on timestamp & hex value, per modular architecture.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Education Section -->
-        <h2 class="section-title">Education</h2>
-        <div class="song-list">
-            <div class="song-item-header">
-                <div></div>
-                <div>University</div>
-                <div>Degree</div>
-                <div>Department</div>
-                <div>Date</div>
-            </div>
-
-            <!-- UCSD Masters -->
-             <div class="song-item" onclick="toggleDetails('jsoe')" style="cursor: pointer;">
-                <div class="arrow">▶</div>
-                <div class="song-description" style="display: flex; align-items: center; gap: 12px;">
-                    <img src="images/jsoe.png" class="song-icon" alt="JSOE Logo" style="width: 40px; height: 40px; object-fit: contain; border-radius: 4px; background-color: #ffffff;">
-                    <div class="title">UC San Diego</div>
-                </div>
-                <div class="song-album">M.S., Computer Science (AI/ML)</div>
-                <div class="song-duration">Jacobs School of Engineering</div>
-                <div class="song-duration">Sep 2023 - Mar 2025</div>
-            </div>
-            <div class="details" id="jsoe">
-                <ul>
-                    <li>Growth Strategist for <a href="https://www.perplexity.ai" target="_blank">Perplexity AI</a></li>
-                    <li>Co-President of the UCSD CSE Graduate Student Council</li>
-                </ul>
-            </div>
-
-            <!-- UCSD Bachelors -->
-             <div class="song-item">
-                <div></div>
-                <div class="song-description" style="display: flex; align-items: center; gap: 12px;">
-                    <img src="images/hdsi.png" class="song-icon" alt="HDSI Logo" style="width: 40px; height: 40px; object-fit: contain; border-radius: 4px; background-color: #ffffff;">
-                    <div class="title">UC San Diego</div>
-                </div>
-                <div class="song-album">B.S., Data Science</div>
-                <div class="song-duration">Halicioglu Data Science Institute</div>
-                <div class="song-duration">Sep 2020 - Mar 2023</div>
-            </div>
-
-        </div>
+      </a>
     </div>
 
-    <!-- JavaScript for Toggle Functionality -->
-    <script>
-        /**
-         * Toggles the visibility of the details section for a song item.
-         * @param {string} id - The unique identifier for the details element.
-         */
-        function toggleDetails(id) {
-            var details = document.getElementById(id);
-            if (!details) return; // Exit if the element doesn't exist
+    <div class="company-card">
+      <a href="https://amd.com" target="_blank" rel="noopener noreferrer" class="company-link">
+        <img src="images/amd.jpg" alt="AMD Logo" class="company-logo" />
+        <div class="company-info">
+          <h3 class="company-name">AMD</h3>
+          <span class="company-description">— Inference optimization for RyzenAI NPU, AMD's flagship processor.</span>
+        </div>
+      </a>
+    </div>
 
-            // Find the arrow in the same row
-            var arrow = details.previousElementSibling.querySelector('.arrow');
-            
-            if (details.style.display === "block") {
-                details.style.display = "none";
-                if (arrow) arrow.classList.remove('open');
-            } else {
-                // Show the clicked one without closing others
-                details.style.display = "block";
-                if (arrow) arrow.classList.add('open');
-            }
-        }
-    </script>
+    <div class="company-card">
+      <a href="https://marvell.com/" target="_blank" rel="noopener noreferrer" class="company-link">
+        <img src="images/marvell-square.png" alt="Marvell Logo" class="company-logo" />
+        <div class="company-info">
+          <h3 class="company-name">Marvell</h3>
+          <span class="company-description">— E2E generative AI pipeline for synthetic data generation and DSP optimization.</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="company-card">
+      <a href="https://asianhealth.stanford.edu/" target="_blank" rel="noopener noreferrer" class="company-link">
+        <img src="images/stanford-square.png" alt="Stanford Logo" class="company-logo" />
+        <div class="company-info">
+          <h3 class="company-name">Stanford University School of Medicine</h3>
+          <span class="company-description">— Research on opioid overdose, and diabetes.</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="company-card">
+      <a href="https://aws.com/" target="_blank" rel="noopener noreferrer" class="company-link">
+          <img src="images/aws-square.jpeg" alt="AWS Logo" class="company-logo" />
+          <div class="company-info">
+          <h3 class="company-name">AWS</h3>
+         <span class="company-description">— Software for Lex ASR, the flagship automatic speech recognition team within AWS.</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="company-card">
+        <a href="https://www.scripps.edu/science-and-medicine/translational-institute/" target="_blank" rel="noopener noreferrer" class="company-link">
+            <img src="images/scripps-square.jpg" alt="Scripps Logo" class="company-logo" />
+            <div class="company-info">
+            <h3 class="company-name">Scripps Research</h3>
+           <span class="company-description">— Research on the estimation of genetic regulatory variation.</span>
+          </div>
+        </a>
+    </div>
+
+    <div class="company-card">
+        <a href="https://www.inphi.com/" target="_blank" rel="noopener noreferrer" class="company-link">
+            <img src="images/inphi-square.png" alt="Inphi Logo" class="company-logo" />
+            <div class="company-info">
+            <h3 class="company-name">Inphi Corporation (acq. Marvell Inc.)</h3>
+           <span class="company-description">— Firmware for ASICs and test boards.</span>
+          </div>
+        </a>
+    </div>
+  </section>
+
+  <script>
+    // Date and Time Update
+    function updateDateTime() {
+      const now = new Date();
+      const options = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      };
+      const dateTimeString = now.toLocaleString('en-US', options);
+      document.getElementById('datetime').textContent = dateTimeString;
+    }
+
+    // Update immediately
+    updateDateTime();
+
+    // Update every second
+    setInterval(updateDateTime, 1000);
+  </script>
 </body>
-
-</html>
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'p3plzcpnl509409'},{'dcenter':'p3'},{'cp_id':'10365854'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='https://img1.wsimg.com/traffic-assets/js/tccl.min.js'></script></html>
