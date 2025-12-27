@@ -286,7 +286,7 @@
         <img src="images/hedra-square.jpeg" alt="Hedra Logo" class="company-logo" />
         <div class="company-info">
           <h3 class="company-name">Hedra</h3>
-          <span class="company-description">— Building the best AI-native visual communication product, making it easier to create great content.</span>
+          <span class="company-description">— Building the best AI-native visual communication product, simplifying content creation.</span>
         </div>
       </a>
     </div>
@@ -370,11 +370,57 @@
       document.getElementById('datetime').textContent = dateTimeString;
     }
 
+    // Theme based on time of day
+    function updateTheme() {
+      const now = new Date();
+      const hour = now.getHours();
+      const header = document.querySelector('.header');
+      const isNightMode = hour >= 18;
+      
+      if (isNightMode) {
+        // After 6PM - dark mode
+        document.body.style.backgroundColor = '#636363';
+        document.body.style.color = '#ffffff';
+        header.style.backgroundColor = 'rgba(99, 99, 99, 0.95)';
+        
+        // Update all text elements to white
+        document.querySelectorAll('.brand h1, .company-name, .hero h2').forEach(el => {
+          el.style.color = '#ffffff';
+        });
+        document.querySelectorAll('.datetime, .brand-subtitle, .hero p, .company-description').forEach(el => {
+          el.style.color = 'rgba(255, 255, 255, 0.8)';
+        });
+        document.querySelectorAll('.hero p a').forEach(el => {
+          el.style.color = '#ffffff';
+        });
+      } else {
+        // Before 6PM - light mode
+        document.body.style.backgroundColor = '#fafaf9';
+        document.body.style.color = '#1a1a1a';
+        header.style.backgroundColor = 'rgba(250, 250, 249, 0.95)';
+        
+        // Reset all text elements to original colors
+        document.querySelectorAll('.brand h1, .company-name, .hero h2').forEach(el => {
+          el.style.color = '#1a1a1a';
+        });
+        document.querySelectorAll('.datetime, .brand-subtitle, .hero p, .company-description').forEach(el => {
+          el.style.color = '#666';
+        });
+        document.querySelectorAll('.hero p a').forEach(el => {
+          el.style.color = '#1a1a1a';
+        });
+      }
+    }
+
     // Update immediately
     updateDateTime();
+    updateTheme();
 
     // Update every second
-    setInterval(updateDateTime, 1000);
+    setInterval(() => {
+      updateDateTime();
+      updateTheme();
+    }, 1000);
   </script>
 </body>
 <script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'p3plzcpnl509409'},{'dcenter':'p3'},{'cp_id':'10365854'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='https://img1.wsimg.com/traffic-assets/js/tccl.min.js'></script></html>
